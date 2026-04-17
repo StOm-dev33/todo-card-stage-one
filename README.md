@@ -3,98 +3,98 @@
 
 A fully interactive, stateful Todo Card component built with vanilla HTML, CSS, and JavaScript. This is an enhanced version of the Stage 0 card with advanced features including editing, status management, priority levels, and dynamic time handling.
 
-## 📋 Features Implemented
+ Features Implemented
 
-### ✏️ Editing Mode
-- **Edit Button**: Click to enter edit mode
-- **Edit Form**: Fully functional form with:
+Editing Mode
+- Edit Button: Click to enter edit mode
+- Edit Form: Fully functional form with:
   - Title input (required, max 100 characters)
   - Description textarea (max 500 characters)
   - Priority selector (Low, Medium, High)
   - Due date picker (datetime-local)
-- **Save/Cancel**: Persist or discard changes with proper focus management
-- **Keyboard Support**: ESC key closes form, focus trapped in edit mode
+- Save/Cancel: Persist or discard changes with proper focus management
+- Keyboard Support: ESC key closes form, focus trapped in edit mode
 
-### 🎯 Status Management
-- **Status Dropdown**: Select from "Pending", "In Progress", "Done"
-- **Bidirectional Sync**: 
+ Status Management
+- Status Dropdown: Select from "Pending", "In Progress", "Done"
+- Bidirectional Sync: 
   - Checkbox toggles status to "Done"
   - Status change syncs with checkbox
   - All visual states update together
-- **Visual Feedback**: Strike-through and muted colors when completed
+- Visual Feedback: Strike-through and muted colors when completed
 
-### 🏷️ Priority Indicators
-- **Color-Coded Badges**: High (red), Medium (orange), Low (green)
-- **Visual Distinction**: Different background colors and borders
-- **Hover Effects**: Scale and shadow animations
+ Priority Indicators
+- Color-Coded Badges: High (red), Medium (orange), Low (green)
+- Visual Distinction: Different background colors and borders
+- Hover Effects: Scale and shadow animations
 
-### 🔄 Expand/Collapse Behavior
-- **Collapsible Section**: Hidden by default, reveals status and time info
-- **Keyboard Accessible**: `aria-expanded` and `aria-controls` attributes
-- **Smooth Animations**: CSS transitions with visual feedback
+ Expand/Collapse Behavior
+- Collapsible Section: Hidden by default, reveals status and time info
+- Keyboard Accessible: `aria-expanded` and `aria-controls` attributes
+- Smooth Animations: CSS transitions with visual feedback
 
-### ⏱️ Time Management
-- **Granular Time Updates**: 
+ Time Management
+- Granular Time Updates: 
   - "Due in X days"
   - "Due in X hours"
   - "Due in X minutes"
   - "Due in less than 1 minute"
-- **Overdue Logic**:
+- Overdue Logic:
   - Shows "Overdue by X days/hours/minutes"
   - Red visual indicator
   - Pulsing animation for urgency
-- **Auto-Refresh**: Updates every 60 seconds
-- **Completion Handling**: Shows "✓ Completed" when task is done
+- Auto-Refresh: Updates every 60 seconds
+- Completion Handling: Shows "✓ Completed" when task is done
 
-### ♿ Accessibility Features
-- **ARIA Labels**: All interactive elements have proper labels
-- **Live Region**: `aria-live="polite"` on time updates for screen readers
-- **Focus Management**: 
+ Accessibility Features
+- ARIA Labels: All interactive elements have proper labels
+- Live Region: `aria-live="polite"` on time updates for screen readers
+- Focus Management: 
   - Edit form focus trap
   - Return focus to edit button when closed
   - Tab order preserved
-- **Keyboard Navigation**:
+- Keyboard Navigation:
   - Tab through: Checkbox → Status → Expand → Edit → Delete → Form fields
   - Enter/Space: Activate buttons
   - ESC: Close edit form
-- **Semantic HTML**: Proper use of `<label>`, `<section>`, `<dialog>` roles
+- Semantic HTML: Proper use of `<label>`, `<section>`, `<dialog>` roles
 
-### 📱 Responsive Design
-- **Mobile (320px)**: Single column, full-width buttons, compact padding
-- **Tablet (768px)**: Optimized spacing, flexible layouts
-- **Desktop (1024px+)**: Full-width elements, enhanced spacing
+ Responsive Design
+- Mobile (320px): Single column, full-width buttons, compact padding
+- Tablet (768px): Optimized spacing, flexible layouts
+- Desktop (1024px+): Full-width elements, enhanced spacing
 
-### 🎨 Design Features
-- **Glassmorphism Effect**: Frosted glass with backdrop blur
-- **Gradient Background**: Purple to violet gradient
-- **Smooth Animations**: 
+ Design Features
+- Glassmorphism Effect: Frosted glass with backdrop blur
+- Gradient Background: Purple to violet gradient
+- Smooth Animations: 
   - Slide-in on load
   - Glow pulse on card
   - Smooth transitions on all interactive elements
   - Ripple effect on buttons
-- **Hover Effects**: Elevation, shadow enhancement, color transitions
+- Hover Effects: Elevation, shadow enhancement, color transitions
 
-## 📁 File Structure
+ File Structure
 
-```
+
 stom/
 ├── index.html      # Main HTML structure
 ├── card.css        # Styling and animations
 ├── card.js         # Functionality and state management
 └── README.md       # This file
-```
 
-## 🔧 HTML Structure
 
-### Main Sections
-- **Card Header**: Title + Priority badge
-- **Description Section**: Description text + Expand button
-- **Collapsible Section**: Status control, due date, time remaining, overdue indicator
-- **Checkbox Group**: Mark as complete toggle
-- **Edit Form**: Form with all editable fields (hidden by default)
-- **Action Buttons**: Edit, Delete buttons
+ HTML Structure
 
-### Test IDs (for automated testing)
+ Main Sections
+- Card Header: Title + Priority badge
+- Description Section: Description text + Expand button
+- Collapsible Section: Status control, due date, time remaining, overdue indicator
+- Checkbox Group: Mark as complete toggle
+- Edit Form: Form with all editable fields (hidden by default)
+- Action Buttons: Edit, Delete buttons
+
+ Test IDs (for automated testing)
 - `test-todo-card`: Main card container
 - `test-todo-title`: Task title
 - `test-todo-description`: Description text
@@ -116,10 +116,10 @@ stom/
 - `test-todo-save-button`: Save button
 - `test-todo-cancel-button`: Cancel button
 
-## 🎮 JavaScript State Management
+ JavaScript State Management
 
-### Task Data Structure
-```javascript
+ Task Data Structure
+javascript
 {
   title: string,
   description: string,
@@ -128,9 +128,9 @@ stom/
   status: 'Pending' | 'In Progress' | 'Done',
   completed: boolean
 }
-```
 
-### Key Functions
+
+ Key Functions
 - `toggleExpand()`: Show/hide collapsible section
 - `handleCheckboxChange()`: Sync checkbox with status
 - `handleStatusChange()`: Sync status dropdown with checkbox
@@ -140,7 +140,7 @@ stom/
 - `deleteTask()`: Remove task (with confirmation)
 - `updateCardDisplay()`: Refresh all UI elements
 
-## 🚀 Usage
+ Usage
 
 ### Opening in Browser
 1. Open `index.html` in a modern web browser
@@ -167,7 +167,7 @@ stom/
 2. **Done → Pending**: Uncheck the checkbox or select "Pending"
 3. **Any status**: Select "In Progress" from status dropdown
 
-## 🎨 CSS Customization
+ CSS Customization
 
 ### Color Scheme
 - **Primary**: #667eea (Blue)
@@ -187,14 +187,14 @@ stom/
 - `pulse`: 1.5s - Overdue indicator
 - Transitions: 0.3s with cubic-bezier timing
 
-## 📊 Browser Support
+ Browser Support
 
 - ✅ Chrome/Edge 90+
 - ✅ Firefox 88+
 - ✅ Safari 14+ (with -webkit prefixes)
 - ✅ Mobile browsers (iOS Safari, Chrome Mobile)
 
-## ⚠️ Known Limitations
+ Known Limitations
 
 1. **Local Storage**: Changes are not persisted (in-memory only)
    - *To add*: Implement localStorage or API integration
@@ -205,9 +205,9 @@ stom/
 4. **Edit Form Validation**: Basic required field only
    - *To add*: More advanced validation and error messages
 
-## 🔄 What Changed from Stage 0
+ What Changed from Stage 0
 
-### New Features
+ New Features
 - ✨ Full edit mode with form
 - ✨ Status dropdown with three options
 - ✨ Priority selector in edit form
@@ -216,18 +216,18 @@ stom/
 - ✨ Granular time remaining display
 - ✨ Overdue indicator with styling
 
-### Enhanced Features
-- 🎯 Better status synchronization (checkbox ↔ dropdown)
-- 🎨 Glassmorphism design with animations
-- ♿ Comprehensive accessibility (ARIA labels, focus management)
-- 📱 Fully responsive layout
-- ⌨️ Keyboard navigation and focus trapping
+ Enhanced Features
+-  Better status synchronization (checkbox ↔ dropdown)
+-  Glassmorphism design with animations
+-  Comprehensive accessibility (ARIA labels, focus management)
+-  Fully responsive layout
+-  Keyboard navigation and focus trapping
 
 ### Removed Features
-- ❌ Static tags (may be added back as editable)
-- ❌ Simple status display (now interactive dropdown)
+-  Static tags (may be added back as editable)
+-  Simple status display (now interactive dropdown)
 
-## 🧪 Testing
+Testing
 
 ### Manual Testing Checklist
 - [ ] Can open/close edit form with Edit button
@@ -253,7 +253,7 @@ stom/
 - [ ] Focus trap works in edit form
 - [ ] Can navigate with keyboard only
 
-## 📝 Next Steps for Improvement
+ Next Steps for Improvement
 
 1. **Backend Integration**: 
    - Save tasks to database
@@ -278,23 +278,21 @@ stom/
    - Lazy load form
    - Service worker for offline support
 
-## 📄 License
+ License
 
 This is an educational project for HNG Stage 1 assignment.
 
----
+
 
 **Last Updated**: April 2026
 **Version**: 1.0 - Stage 1 Complete
 
-* 🔗 Live URL: *[Add your deployed link here]*
-* 🔗 GitHub Repository: *[Add your repo link here]*
 
----
 
-## 🧩 Features
 
-### ✅ Stage 1A — Advanced Todo Card
+ Features
+
+ Stage 1A — Advanced Todo Card
 
 #### Core Features
 
@@ -326,9 +324,9 @@ This is an educational project for HNG Stage 1 assignment.
 * Keyboard navigable interface
 * Proper form labeling
 
----
 
-### 👤 Stage 1B — Profile Card
+
+ Stage 1B — Profile Card
 
 #### Core Features
 
@@ -345,17 +343,17 @@ This is an educational project for HNG Stage 1 assignment.
 * Responsive and readable layout
 * Proper alt text and focus states
 
----
 
-## 🛠️ Technologies Used
+
+ Technologies Used
 
 * HTML5 (Semantic Markup)
 * CSS3 (Flexbox, Responsive Design)
 * Vanilla JavaScript (DOM Manipulation, State Management)
 
----
 
-## 🔄 What Changed from Stage 0
+
+ What Changed from Stage 0
 
 * Introduced **state management** using a central JavaScript object
 * Replaced direct DOM manipulation with a **render-based approach**
@@ -368,18 +366,17 @@ This is an educational project for HNG Stage 1 assignment.
   * Overdue handling and enhanced time logic
 * Improved accessibility with ARIA attributes and labels
 
----
 
-## ⚠️ Known Limitations
+ Known Limitations
 
 * No persistent storage (data resets on refresh)
 * Edit mode does not include full focus trapping (optional enhancement)
 * Styling is functional but minimal (can be improved further)
 * No animations or transitions for UI changes
 
----
 
-## ♿ Accessibility Notes
+
+ Accessibility Notes
 
 * All interactive elements are keyboard accessible
 * Focus states are visible
@@ -387,18 +384,18 @@ This is an educational project for HNG Stage 1 assignment.
 * Time updates are announced using `aria-live="polite"`
 * Form inputs are properly labeled
 
----
 
-## 📱 Responsiveness
+
+ Responsiveness
 
 * Mobile (320px): Fully stacked layout
 * Tablet (768px): Improved spacing and alignment
 * Desktop (1024px+): Structured and centered layout
 * Handles long text and multiple tags without breaking layout
 
----
 
-## 🧠 Key Learning Outcomes
+
+ Key Learning Outcomes
 
 * State-driven UI design without frameworks
 * DOM manipulation best practices
@@ -406,35 +403,29 @@ This is an educational project for HNG Stage 1 assignment.
 * Managing synchronized UI states
 * Building scalable frontend components
 
----
 
-## 📦 Setup Instructions
+
+ Setup Instructions
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   ```
+   
+   git clone https://github.com/StOm-dev33/your-repo-name.git
+  
 
 2. Open the project folder:
 
-   ```bash
-   cd your-repo-name
-   ```
+
+   cd todo-card-stage-one
+  
 
 3. Run the project:
 
-   * Open `index.html` in your browser
+    Open `index.html` in your browser
 
----
 
-## 📤 Submission
 
-* Live URL and GitHub repo submitted via the HNG form
-* Includes both Stage 1A and Stage 1B implementations
 
----
-
-## 🙌 Acknowledgements
+ Acknowledgements
 
 HNG Internship Program for providing structured frontend challenges focused on real-world development practices.
